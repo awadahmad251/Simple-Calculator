@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>               
+                     <div class="calculator">
+                 <h1>Simple Calculator</h1>
+             <input type="number" id="num1" placeholder="First Number">
+             <input type="number" id="num2" placeholder="Second Number">
+             <select name="" id="operation">
+             <option value="add">ADD</option>
+             <option value="subtract">SUBTRACT</option>
+             <option value="multiply">MULTIPLY</option>
+             <option value="divide">DIVIDE</option>
+             </select>
+                <button onclick="calculate()">Calculate</button>
+                <button onclick="clearFields()">Clear</button>
+                <h2 id="result">Result: </h2>
+                </div>
+                <script>
+                    function calculate()
+                    {
+                        var num1 = document.getElementById("num1").value;
+                        var num2 = document.getElementById("num2").value;
+                        var operation = document.getElementById("operation").value;
+                        var result;
+                        if(operation==="add")
+                    {
+                        result = parseFloat(num1) + parseFloat(num2);
+                        document.getElementById("result").innerHTML="Result: "+result;
+                    }
+                    else if(operation==="subtract")
+                    {
+                        result= parseFloat(num1) - parseFloat(num2);
+                        document.getElementById("result").innerHTML="Result: "+result;
+                    }
+                    else if(operation==="multiply")
+                    {
+                        result = parseFloat(num1) * parseFloat(num2);
+                        document.getElementById("result").innerHTML="Result: "+result;
+                    }
+                    else if(operation==="divide")
+                    {
+                        result = parseFloat(num1) / parseFloat(num2);
+                        document.getElementById("result").innerHTML="Result: "+result;
+                    }
+                    else
+                    {
+                        document.getElementById("result").innerHTML="Invalid Operation";
+                    }
+                    }
+
+                    function clearFields()
+                    {
+                        document.getElementById("num1").value="";
+                        document.getElementById("num2").value="";
+                        document.getElementById("result").innerHTML="Result: ";
+                    }
+                </script>
+
+</body>
+</html>
